@@ -12,7 +12,7 @@
 <script>
 
 export default {
-    name: 'StudentTable',
+    name: 'StudentRow',
     props: {
         student: Object,
         edit: Boolean
