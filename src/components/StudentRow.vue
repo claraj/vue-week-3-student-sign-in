@@ -32,12 +32,12 @@ export default {
 
 <style>
 
-.present-true {
+.present {
     color: gray;
     font-style: italic;
 }
 
-.present-false {
+.absent {
     font-weight: bold;
 }
 

@@ -6,7 +6,6 @@
     </div>
 
     <div class="card add-student m-2 p-2">
-        
         <h4 class="card-title">Add new student</h4>
 
         <div class="form-group">
@@ -37,14 +36,21 @@ export default {
     methods: {
         addStudent() {
             this.errors = []
-            if (this.newStudentName && this.newStarID) {
+
+            if (!this.newStudentName) {
+                this.errors.push('Student name is required')
+            }
+
+            if (!this.newStarID) {
+                this.errors.push('StarID is required')
+            }
+
+            if (this.errors.length == 0) {
                 let student = { name: this.newStudentName, starID: this.newStarID, present: false }
                 this.$emit('student-added', student)
                 this.newStudentName = ''
                 this.newStarID = ''
-            } else {
-                this.errors.push('Name and StarID are required.')
-            }
+            } 
         }
     }
 }

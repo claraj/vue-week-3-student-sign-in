@@ -18,11 +18,6 @@
 <script>
 export default {
   name: 'StudentMessage',
-  data() {
-    return {
-      seeMessage: false 
-    }
-  },
   props: {
     student: Object
   }
