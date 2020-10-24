@@ -1,8 +1,17 @@
 <template>
-  <div class="hello">
-      <transition name="fade">
-          <div class="alert alert-success" v-if="seeMessage">{{message}} {{name}}</div>
-      </transition>
+  <div class="message">
+
+        <div v-show="student.name">
+
+            <div v-if="student.present" class="alert alert-success">
+                Welcome, {{ student.name }}!
+            </div>
+            <div v-else class="alert alert-info">
+                Goodbye, {{ student.name }}. See you later!
+            </div>
+            
+        </div> 
+
   </div>
 </template>
 
@@ -15,29 +24,12 @@ export default {
     }
   },
   props: {
-    message: String,
-    name: String
-  },
-  watch: {
-    message() {
-      this.seeMessage = true 
-      setTimeout( () => {
-        this.seeMessage = false 
-      }, 3000)
-    }
+    student: Object
   }
 }
 </script>
 
 <style>
-
-.fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
-}
-
-.fade-enter, .fade-leave-to {
-    opacity: 0;
-}
 
 </style>
 

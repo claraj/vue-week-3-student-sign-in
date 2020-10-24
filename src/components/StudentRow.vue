@@ -1,5 +1,5 @@
 <template>
-  <tr v-bind:class="'present-' + student.present">    
+  <tr v-bind:class="{ present: student.present, absent: !student.present }">    
     <td>{{ student.name }}</td>
     <td>{{ student.starID }}</td>
     <td><input type="checkbox" v-model="student.present" v-on:change="checked(student)"></td>
@@ -36,8 +36,13 @@ export default {
     color: gray;
     font-style: italic;
 }
+
 .present-false {
     font-weight: bold;
+}
+
+.delete-icon {
+    height: 20px;
 }
 
 </style>

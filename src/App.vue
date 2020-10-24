@@ -7,7 +7,7 @@
       v-on:student-present="studentArrivedOrLeft"
       v-on:delete-student="studentDeleted">
     </StudentTable>
-    <StudentMessage v-bind:message="message" v-bind:name="name"></StudentMessage>
+    <StudentMessage v-bind:student="mostRecentStudent"></StudentMessage>
 
   </div>
 </template>
@@ -22,10 +22,10 @@ export default {
   data() {
     return {
       students: [
-        { name: 'example', 'starID': 'aa1234aa', present: true },
+        { name: 'Example', 'starID': 'aa1234aa', present: true },
+        { name: 'Test', 'starID': 'bb5678bb', present: false },
       ],
-      message: '',
-      name: ''
+      mostRecentStudent: {}
     }
   },
   components: {
@@ -41,11 +41,11 @@ export default {
       })
     },
     studentArrivedOrLeft(student) {
-      this.message = student.present ? 'Welcome,' : 'Goodbye, '
-      this.name = student.name  
+      this.mostRecentStudent = student
     },
     studentDeleted(student) {
       this.students = this.students.filter( function(s) { return s != student })
+      this.mostRecentStudent = {}   // clears welcome/goodbye message
     }
   }
 }
