@@ -61,6 +61,5 @@ export default {
 </script>
 
 <style>
-
-
+/* Add any styles for this component here */
 </style>

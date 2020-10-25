@@ -12,15 +12,19 @@
 </template>
 
 <script>
+
 export default {
   name: 'StudentMessage',
   props: {
     student: Object
   }
 }
+
 </script>
 
 <style scoped>
+
 /* Add any styles for this component here */
+
 </style>
 
