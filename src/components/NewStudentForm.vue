@@ -18,7 +18,6 @@
         </div>
         <button class="btn btn-primary" v-on:click="addStudent">Add</button>
     </div>
-
 </div>
 </template>
 
@@ -57,7 +56,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
     /* Write any styles for elements in this component here  */
 </style>
 

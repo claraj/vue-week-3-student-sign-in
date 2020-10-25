@@ -37,11 +37,20 @@ export default {
     newStudentAdded(student) {
       this.students.push(student)
       this.students.sort(function(s1, s2) {
-        return s1.name.toLowerCase() > s2.name.toUpperCase() ? -1 : 1
+        return s1.name.toLowerCase() < s2.name.toLowerCase() ? -1 : 1
       })
     },
-    studentArrivedOrLeft(student) {
-      this.mostRecentStudent = student
+    studentArrivedOrLeft(student, present) {
+      // find student in this.students, set present value 
+      let updateStudent = this.students.find( function(s) {
+        if (s.name === student.name && s.starID === student.starID) {
+          return true
+        }
+      })
+      if (updateStudent) {
+        updateStudent.present = present
+        this.mostRecentStudent = student
+      }
     },
     studentDeleted(student) {
       this.students = this.students.filter( function(s) { return s != student })

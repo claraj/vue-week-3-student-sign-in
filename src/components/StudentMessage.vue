@@ -1,17 +1,13 @@
 <template>
-  <div class="message">
-
-        <div v-show="student.name">
-
-            <div v-if="student.present" class="alert alert-success">
-                Welcome, {{ student.name }}!
-            </div>
-            <div v-else class="alert alert-info">
-                Goodbye, {{ student.name }}. See you later!
-            </div>
-            
-        </div> 
-
+  <div>
+      <div v-show="student.name">
+          <div v-if="student.present" class="alert alert-success">
+              Welcome, {{ student.name }}!
+          </div>
+          <div v-else class="alert alert-info">
+              Goodbye, {{ student.name }}. See you later!
+          </div>          
+      </div> 
   </div>
 </template>
 
@@ -24,7 +20,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+/* Add any styles for this component here */
 </style>
 
