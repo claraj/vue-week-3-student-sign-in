@@ -24,6 +24,7 @@
 
 export default {
     name: 'NewStudentForm',
+    emits: ['student-added'],
     data() {
         return {
             newStudentName: '',
