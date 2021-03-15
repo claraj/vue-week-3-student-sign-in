@@ -2,7 +2,7 @@
   <tr v-bind:class="{ present: student.present, absent: !student.present }">    
     <td>{{ student.name }}</td>
     <td>{{ student.starID }}</td>
-    <td><input type="checkbox" v-bind:checked="student.present" v-on:change="arrivedOrLeft(student, $event.srcElement.checked)"></td>
+    <td><input type="checkbox" v-bind:checked="student.present" v-on:checked="arrivedOrLeft(student, $event.target.checked)"></td>
     <td v-show="edit">
         <img class="delete-icon" v-on:click="deleteStudent" src="@/assets/delete.png">
     </td>
