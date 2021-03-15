@@ -36,6 +36,7 @@ import StudentRow from '@/components/StudentRow.vue'
 export default {
     name: 'StudentTable',
     components: { StudentRow },
+    emits: ['student-present', 'delete-student'],
     data() {
         return {
             editTable: false

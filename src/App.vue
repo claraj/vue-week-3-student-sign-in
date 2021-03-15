@@ -19,6 +19,7 @@ import StudentMessage from './components/StudentMessage.vue'
 
 export default {
   name: 'app',
+  emits: ['student-added'],  // Document the events this component emits
   data() {
     return {
       students: [
@@ -61,5 +62,7 @@ export default {
 </script>
 
 <style>
-/* Add any styles for this component here */
+
+@import "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+
 </style>

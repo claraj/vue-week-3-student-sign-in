@@ -13,6 +13,7 @@
 
 export default {
     name: 'StudentRow',
+    emits: ['student-arrived-or-left', 'delete-student'],
     props: {
         student: Object,
         edit: Boolean

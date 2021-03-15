@@ -23,8 +23,6 @@ export default {
 </script>
 
 <style scoped>
-
 /* Add any styles for this component here */
-
 </style>
 
