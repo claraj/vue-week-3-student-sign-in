@@ -19,7 +19,6 @@ import StudentMessage from './components/StudentMessage.vue'
 
 export default {
   name: 'app',
-  emits: ['student-added'],  // Document the events this component emits
   data() {
     return {
       students: [
